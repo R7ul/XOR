@@ -35,7 +35,7 @@ func main() {
 	nn.Init(I_NODES, H_NODES, O_NODES)
 	stop := true
 
-	fmt.Printf("Aprendendo a realizar a operacao XOR\n")
+	fmt.Printf("Learning to perform the XOR operation\n")
 	for stop {
 		for i := 0; i < TRAINING_COUNT; i++ {
 			index := rand.Intn(MAX-MIN+1) + MIN
@@ -47,14 +47,14 @@ func main() {
 
 		if nnResponse1 <= 0.009 && nnResponse2 >= 0.98 {
 			stop = false
-			fmt.Printf("\n\nCriterio de convergencia atingido!!!\n")
+			fmt.Printf("\n\nConvergence criterion reached!!!\n")
 			fmt.Printf("%f < 0.009\n", nnResponse1)
 			fmt.Printf("%f > 0.98\n", nnResponse2)
-			fmt.Printf("[%1.f][%1.f] = %f (resposta correta %1.f)\n", table.Input[3][0][0], table.Input[3][1][0], nnResponse1, table.Output[3][0][0])
-			fmt.Printf("[%1.f][%1.f] = %f (resposta correta %1.f)\n", table.Input[1][0][0], table.Input[1][1][0], nnResponse2, table.Output[1][0][0])
+			fmt.Printf("[%1.f][%1.f] = %f (right answer %1.f)\n", table.Input[3][0][0], table.Input[3][1][0], nnResponse1, table.Output[3][0][0])
+			fmt.Printf("[%1.f][%1.f] = %f (right answer %1.f)\n", table.Input[1][0][0], table.Input[1][1][0], nnResponse2, table.Output[1][0][0])
 		} else {
-			fmt.Printf("[%1.f][%1.f] = %f (resposta correta %1.f)\n", table.Input[3][0][0], table.Input[3][1][0], nnResponse1, table.Output[3][0][0])
-			fmt.Printf("[%1.f][%1.f] = %f (resposta correta %1.f)\n\n", table.Input[1][0][0], table.Input[1][1][0], nnResponse2, table.Output[1][0][0])
+			fmt.Printf("[%1.f][%1.f] = %f (right answer %1.f)\n", table.Input[3][0][0], table.Input[3][1][0], nnResponse1, table.Output[3][0][0])
+			fmt.Printf("[%1.f][%1.f] = %f (right answer %1.f)\n\n", table.Input[1][0][0], table.Input[1][1][0], nnResponse2, table.Output[1][0][0])
 		}
 	}
 }
